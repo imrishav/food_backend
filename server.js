@@ -6,11 +6,11 @@ const app = require("./app");
 
 const DB = process.env.DATABASE_LOCAL;
 mongoose
-  .connect(DB, {
+  .connect("mongodb://localhost:27017", {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
+    useUnifiedTopology: true
   })
-  .then((con) => {
+  .then(con => {
     console.log("DB Connected Succesfully...");
   });
 
